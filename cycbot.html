@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cyclicalBot Commands</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #dddddd;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .commands-list {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .command {
+            background-color: #222222;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .command:hover {
+            background-color: #292929;
+        }
+
+        .command p {
+            display: none;
+            color: #cccccc;
+            font-size: 0.9em;
+        }
+
+        .command.active p {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .command strong {
+            color: #88c0d0;
+        }
+
+        .command-content {
+            background-color: #222222;
+            border-radius: 5px;
+            padding: 10px;
+            display: none;
+            margin-bottom: 10px;
+        }
+
+        .command-content.active {
+            display: block;
+        }
+
+        /* Styling for contact info */
+        #contact {
+            background-color: #333333;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        #contact strong {
+            color: #ffffff; /* White text color */
+        }
+
+        #contact p {
+            color: #ffffff; /* White text color */
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Commands List -->
+    <div class="commands-list">
+        <div class="command" id="contact">
+            <strong>Contact Info</strong>
+            <div class="command-content">
+                <p>Discord: @cyclical3</p>
+            </div>
+        </div>
+
+        <div class="command" id="qadd">
+            <strong>!qadd</strong>
+            <div class="command-content">
+                <p>Adds a quote to the list of quotes.</p>
+                <p>Example: !qadd I like adding quotes.</p>
+            </div>
+        </div>
+
+        <div class="command" id="randomnumber">
+            <strong>!randomnumber</strong>
+            <div class="command-content">
+                <p>Generates a random number.</p>
+                <p>Example: !randomnumber</p>
+            </div>
+        </div>
+
+        <div class="command" id="coords">
+            <strong>!coords</strong>
+            <div class="command-content">
+                <p>Displays the bot's current coordinates.</p>
+                <p>Example: !coords</p>
+            </div>
+        </div>
+
+        <div class="command" id="help">
+            <strong>!help</strong>
+            <div class="command-content">
+                <p>Displays the list of available commands.</p>
+                <p>Example: !help</p>
+            </div>
+        </div>
+
+        <div class="command" id="kill">
+            <strong>!kill</strong>
+            <div class="command-content">
+                <p>Kills the bot.</p>
+                <p>Example: !kill</p>
+            </div>
+        </div>
+
+        <div class="command" id="serverinfo">
+            <strong>!serverinfo</strong>
+            <div class="command-content">
+                <p>Provides information about the server.</p>
+                <p>Example: !serverinfo</p>
+            </div>
+        </div>
+
+        <div class="command" id="msgs">
+            <strong>!msgs</strong>
+            <div class="command-content">
+                <p>Displays the number of messages sent by a user.</p>
+                <p>Example: !msgs cyclicalBot</p>
+            </div>
+        </div>
+
+        <div class="command" id="botinfo">
+            <strong>!botinfo</strong>
+            <div class="command-content">
+                <p>Displays information about the bot.</p>
+                <p>Example: !botinfo</p>
+            </div>
+        </div>
+
+        <div class="command" id="report">
+            <strong>!report</strong>
+            <div class="command-content">
+                <p>Reports a player with a specified reason.</p>
+                <p>Example: !report cyclicalBot griefed my base.</p>
+            </div>
+        </div>
+
+        <div class="command" id="clout">
+            <strong>!clout</strong>
+            <div class="command-content">
+                <p>Displays the number of times a user has been mentioned.</p>
+                <p>Example: !clout cyclicalBot</p>
+            </div>
+        </div>
+
+        <div class="command" id="discord">
+            <strong>!discord</strong>
+            <div class="command-content">
+                <p>Provides the link to the Discord server.</p>
+                <p>Example: !discord</p>
+            </div>
+        </div>
+
+        <div class="command" id="faq">
+            <strong>!faq</strong>
+            <div class="command-content">
+                <p>Displays a random FAQ.</p>
+                <p>Example: !faq</p>
+            </div>
+        </div>
+
+        <div class="command" id="addfaq">
+            <strong>!addfaq</strong>
+            <div class="command-content">
+                <p>Adds a fact to the FAQ list.</p>
+                <p>Example: !addfaq I like adding facts.</p>
+            </div>
+        </div>
+
+        <div class="command" id="jd">
+            <strong>!joindate</strong>
+            <div class="command-content">
+                <p>Displays the join date of a user.</p>
+                <p>Example: !jd cyclicalBot or !joindate cyclicalBot</p>
+            </div>
+        </div>
+
+        <div class="command" id="pokemon">
+            <strong>!pokemon</strong>
+            <div class="command-content">
+                <p>Displays a random Pokémon or a specified Pokémon by number.</p>
+                <p>Example: !pokemon or !pokemon 150</p>
+            </div>
+        </div>
+
+        <div class="command" id="nword">
+            <strong>!nword</strong>
+            <div class="command-content">
+                <p>Displays the number of times a user has said the n-word.</p>
+                <p>Example: !nword username or !nword top</p>
+            </div>
+        </div>
+
+        <div class="command" id="joke">
+            <strong>!joke</strong>
+            <div class="command-content">
+                <p>Tells a random joke.</p>
+                <p>Example: !joke</p>
+            </div>
+        </div>
+
+        <div class="command" id="quote">
+            <strong>!quote</strong>
+            <div class="command-content">
+                <p>Displays a random quote.</p>
+                <p>Example: !quote</p>
+            </div>
+        </div>
+
+        <div class="command" id="playtime">
+            <strong>!playtime</strong>
+            <div class="command-content">
+                <p>Displays the playtime of a user.</p>
+                <p>Example: !playtime cyclicalBot or !pt cyclicalBot</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.command').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.querySelector('.command-content');
+                content.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
